@@ -1,0 +1,16 @@
+body{margin:0;}
+
+.krop{
+height:100vh;
+width:100vw;
+display:flex;
+}
+
+.container{
+height:100%;
+width:100%;
+background-color:black;
+color:white;
+
+
+}
