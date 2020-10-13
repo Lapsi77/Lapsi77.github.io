@@ -1,0 +1,41 @@
+body{margin:0;}
+
+.krop{
+height:100vh;
+width:100vw;
+background-color: chocolate;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#text{
+height:7rem;
+width:25rem;
+background-color:white;
+border:3px solid rgb(170, 76, 9);
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+
+span{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 35px;
+}
+
+.used{
+color:pink;
+font-weight:800;
+font-size:37px;
+text-decoration: underline black;
+}
+
+
+
+
+
+
+
