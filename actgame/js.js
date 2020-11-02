@@ -11,8 +11,8 @@ document.body.addEventListener("keydown", function (e) {
 document.body.addEventListener("keyup", function (e) {
     keys[e.key] = false;
 });
-gameboard.width = 1000;
-gameboard.height = 750;
+gameboard.width = 800;
+gameboard.height = 600;
 
 let loop = true
 let y = 400

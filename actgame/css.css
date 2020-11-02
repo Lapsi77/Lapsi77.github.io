@@ -14,8 +14,8 @@ text-shadow:4px 6px 5px darkred;
 
 #gamearea{
 display: block;
-height:800px;
-width:1000px;
+height:600px;
+width:800px;
 border:3px solid white;
 }
 
@@ -50,9 +50,9 @@ color:white;
 .header{
 color:palevioletred;
 border:2px solid palevioletred;
-width:300px;
-height:700px;
-font-size:2rem;
+width:200px;
+height:600px;
+font-size:20px;
 text-align: center;
 padding-top:30px;
 
