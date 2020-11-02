@@ -114,8 +114,8 @@ if(enemyX<x){
 
 function createPoint(){
 if(y < (pointY+27) && y > (pointY-27) && x > (pointX-27) && x < (pointX+27)){
-    pointY = Math.round(Math.random() * 700)
-    pointX = Math.round(Math.random() * 900)
+    pointY = Math.round(Math.random() * 500)
+    pointX = Math.round(Math.random() * 700)
     score++
     enemySpeed += 0.1
     speed += 0.2
