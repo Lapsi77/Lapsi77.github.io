@@ -15,19 +15,19 @@ gameboard.width = 1000;
 gameboard.height = 750;
 
 let loop = true
-let w = 400
-let d = 500
+let y = 400
+let x = 500
 let speed = 3
 let playermodel
 let keys = []
 let enemy
-let enemyd = 50
-let enemyw = 700
+let enemyX = 50
+let enemyY = 700
 let enemySpeed = 0.5
 let point
 let score = 0
-let pointw = Math.round(Math.random() * 900)
-let pointd = Math.round(Math.random() * 650)
+let pointY = Math.round(Math.random() * 900)
+let pointX = Math.round(Math.random() * 650)
 let startTime = new Date().getTime()
 requestAnimationFrame(gameloop)
 
@@ -36,7 +36,7 @@ function player(){
     playermodel = gamearea.getContext("2d");
     playermodel.beginPath();
     playermodel.strokeStyle = "white";
-    playermodel.arc(d, w, 20, 0, 2 * Math.PI);
+    playermodel.arc(x, y, 20, 0, 2 * Math.PI);
     playermodel.stroke();
 }
 
@@ -44,42 +44,41 @@ function player(){
 
 function move(){
 if (keys["w"]) {
-     w += -speed
+     y += -speed
 }
     
 if (keys["s"]) {
-    w += speed
+    y += speed
 }
 if (keys["d"]) {
-    d += speed
+    x += speed
 }
 if (keys["a"]) {
-    d += -speed
+    x += -speed
 }}
 
 
-
 function borders(){
-if(w > 760){
-w = 0
+if(y > 760){
+y = 0
 score--
 enemySpeed += -0.1
 speed += -0.2
 }
-if(d > 1010){
-d = 0
+if(x > 1010){
+x = 0
 score--
 enemySpeed += -0.1
 speed += -0.2
 }
-if(w < -10){
-w = 750
+if(y < -10){
+y = 750
 score--
 enemySpeed += -0.1
 speed += -0.2
 }
-if(d < -10){
-d = 1000
+if(x < -10){
+x = 1000
 score--
 enemySpeed += -0.1
 speed += -0.2
@@ -93,30 +92,30 @@ function createEnemy(){
     enemy = gamearea.getContext("2d");
     enemy.beginPath();
     enemy.strokeStyle = "red";
-    enemy.arc(enemyd, enemyw, 30, 0, 2 * Math.PI);
+    enemy.arc(enemyX, enemyY, 30, 0, 2 * Math.PI);
     enemy.stroke();
 }
 
 function moveenemy(){
-if(enemyw>w){
-    enemyw = enemyw - enemySpeed
+if(enemyY>y){
+    enemyY = enemyY - enemySpeed
 }
-if(enemyw<w){
-    enemyw = enemyw + enemySpeed
+if(enemyY<y){
+    enemyY = enemyY + enemySpeed
 }
-if(enemyd>d){
-    enemyd = enemyd - enemySpeed
+if(enemyX>x){
+    enemyX = enemyX - enemySpeed
 }
-if(enemyd<d){
-    enemyd = enemyd + enemySpeed
+if(enemyX<x){
+    enemyX = enemyX + enemySpeed
 }}
 
 
 
 function createPoint(){
-if(d < (pointw+27) && d > (pointw-27) && w > (pointd-27) && w < (pointd+27)){
-    pointd = Math.round(Math.random() * 600)
-    pointw = Math.round(Math.random() * 900)
+if(y < (pointY+27) && y > (pointY-27) && x > (pointX-27) && x < (pointX+27)){
+    pointY = Math.round(Math.random() * 700)
+    pointX = Math.round(Math.random() * 900)
     score++
     enemySpeed += 0.1
     speed += 0.2
@@ -126,7 +125,7 @@ point = gamearea.getContext("2d");
 point.beginPath();
 point.strokeStyle = "gold";
 point.fillStyle = "gold";
-point.arc(pointw, pointd, 10, 0, 2 * Math.PI);
+point.arc(pointX, pointY, 10, 0, 2 * Math.PI);
 point.fill();
 point.stroke();
 }
@@ -138,10 +137,10 @@ point.stroke();
 
 
   function circleOverlap(x1, y1, radius1, x2, y2, radius2) {
-x1 = d
-x2 = enemyd
-y1 = w
-y2 = enemyw
+x1 = x
+x2 = enemyX
+y1 = y
+y2 = enemyY
 radius1 = 20
 radius2 = 10
     const dx = x1 - x2;
@@ -163,7 +162,6 @@ function restart(){
 location.reload()
 loop = true
 }
-
 
 
 
