@@ -1,0 +1,12 @@
+body{margin:0;}
+
+.krop{
+height:100vh;
+width:100vw;
+}
+
+.box{
+width:100%;
+height:2%;
+background-color: rgb(255, 0, 0);
+}
