@@ -23,11 +23,11 @@ let keys = []
 let enemy
 let enemyX = 50
 let enemyY = 700
-let enemySpeed = 0.5
-let point
+let enemySpeed = 1
+let point;
 let score = 0
-let pointY = Math.round(Math.random() * 900)
-let pointX = Math.round(Math.random() * 650)
+let pointY = Math.round(Math.random() * 500)
+let pointX = Math.round(Math.random() * 500)
 let startTime = new Date().getTime()
 requestAnimationFrame(gameloop)
 
@@ -36,7 +36,7 @@ function player(){
     playermodel = gamearea.getContext("2d");
     playermodel.beginPath();
     playermodel.strokeStyle = "white";
-    playermodel.arc(x, y, 20, 0, 2 * Math.PI);
+    playermodel.arc(x, y, 15, 0, 2 * Math.PI);
     playermodel.stroke();
 }
 
@@ -113,19 +113,18 @@ if(enemyX<x){
 
 
 function createPoint(){
-if(y < (pointY+27) && y > (pointY-27) && x > (pointX-27) && x < (pointX+27)){
+if(y < (pointY+27) && y > (pointY-50) && x > (pointX-50) && x < (pointX+27)){
     pointY = Math.round(Math.random() * 500)
     pointX = Math.round(Math.random() * 700)
     score++
-    enemySpeed += 0.1
-    speed += 0.2
+    enemySpeed += 0.3
 }
 
 point = gamearea.getContext("2d");
 point.beginPath();
 point.strokeStyle = "gold";
 point.fillStyle = "gold";
-point.arc(pointX, pointY, 10, 0, 2 * Math.PI);
+point.arc(pointX, pointY, 37, 0, 2 * Math.PI);
 point.fill();
 point.stroke();
 }
@@ -168,9 +167,11 @@ loop = true
 
 function gameloop(){
 if(loop){requestAnimationFrame(gameloop)}
+//console.log(y - pointY)
+console.log(x - pointX)
 
 gameboard = gamearea.getContext("2d")
-gameboard.clearRect(0, 0, 1000, 750);
+gameboard.clearRect(0, 0, 800, 600);
 move()
 player()
 moveenemy()
